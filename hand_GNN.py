@@ -680,7 +680,7 @@ rand = np.random.RandomState(SEED)
 
 # Data / training parameters.
 batch_size_tr = 512
-dataset_fn = '/home/cjy/dataset/graph.dat'
+dataset_fn = '/home/chen/Documents/dataset/graph.dat'
 
 graph_num = 436529
 datasetid = int(sys.argv[1])
@@ -689,7 +689,7 @@ learning_rate = float(sys.argv[3])#1e-5
 structure_loss = int(sys.argv[4])#0,1
 num_processing_steps_tr = int(sys.argv[5])#2,6
 isNorm = int(sys.argv[6])#0,1
-restore_file = '/home/cjy/GNN_hand_research/saved'+'/'+'structure_loss_'+str(0)+\
+restore_file = '/home/chen/Documents/GNN_hand_research/saved'+'/'+'structure_loss_'+str(0)+\
                '_num_processing_steps_tr_'+str(num_processing_steps_tr)+'_isNorm_'+str(isNorm)+'.pickle'
 
 Disturbance = False
@@ -852,7 +852,7 @@ config = tf.ConfigProto()
 config.gpu_options.per_process_gpu_memory_fraction = 0.125 # 占用GPU20%的显存
 sess = tf.Session(config=config)
 """
-gpu_options = tf.GPUOptions(allow_growth=True)
+gpu_options = tf.GPUOptions(allow_growth=True)  # 618MiB is needed
 sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
 #train_writer = tf.summary.FileWriter('/home/chen/Documents/GNN_demo/saved',sess.graph)
 if os.path.exists(restore_file):
