@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="62103a3b-9959-40bd-b077-3b42f9a5a251" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/test_example/graph_tuple_0126.py" afterPath="$PROJECT_DIR$/test_example/graph_tuple_0126.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,8 +23,8 @@
       <file leaf-file-name="hand_GNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hand_GNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="13" />
+            <state relative-caret-position="193">
+              <caret line="749" column="0" lean-forward="false" selection-start-line="749" selection-start-column="0" selection-end-line="749" selection-end-column="0" />
               <folding>
                 <element signature="e#295#333#0" expanded="true" />
                 <element signature="e#14080#24330#0" expanded="false" />
@@ -34,36 +35,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils_tf.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="utils_tf.py" pinned="false" current-in-tab="true">
         <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/graph_nets/utils_tf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="567" column="0" lean-forward="false" selection-start-line="567" selection-start-column="0" selection-end-line="567" selection-end-column="42" />
+            <state relative-caret-position="-725">
+              <caret line="636" column="0" lean-forward="true" selection-start-line="636" selection-start-column="0" selection-end-line="636" selection-end-column="0" />
+              <folding>
+                <element signature="e#2469#2507#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="graphs.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/graph_nets/graphs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="155" column="39" lean-forward="true" selection-start-line="155" selection-start-column="39" selection-end-line="155" selection-end-column="39" />
+              <folding>
+                <element signature="e#5270#5308#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pydevd.py" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="193">
+              <caret line="1071" column="0" lean-forward="false" selection-start-line="1071" selection-start-column="0" selection-end-line="1071" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graph_tuple_0126.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test_example/graph_tuple_0126.py">
+      <file leaf-file-name="utils_np.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/graph_nets/utils_np.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-              <folding>
-                <element signature="e#411#429#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="compute_test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_example/compute_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="201">
+              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -144,9 +155,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="325" />
-    <option name="y" value="24" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="600" />
+    <option name="y" value="208" />
     <option name="width" value="808" />
     <option name="height" value="714" />
   </component>
@@ -213,7 +224,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.compute_test">
+  <component name="RunManager" selected="Python.graph_tuple_0126">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -483,9 +494,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.compute_test" />
-        <item index="1" class="java.lang.String" itemvalue="Python.graph_tuple_0126" />
-        <item index="2" class="java.lang.String" itemvalue="Python.hand_GNN " />
+        <item index="0" class="java.lang.String" itemvalue="Python.graph_tuple_0126" />
+        <item index="1" class="java.lang.String" itemvalue="Python.hand_GNN " />
+        <item index="2" class="java.lang.String" itemvalue="Python.compute_test" />
         <item index="3" class="java.lang.String" itemvalue="Python.load" />
         <item index="4" class="java.lang.String" itemvalue="Python.hand_GNN" />
       </list>
@@ -523,17 +534,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1615" height="1054" extended-state="6" />
+    <frame x="600" y="208" width="808" height="714" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20557275" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4108911" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29852322" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29852322" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3343882" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52138156" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -652,48 +663,36 @@
           <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/graph_nets/utils_tf.py</url>
-          <line>950</line>
-          <option name="timeStamp" value="90" />
+          <url>file://$PROJECT_DIR$/test_example/graph_tuple_0126.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="92" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/graph_nets/utils_tf.py</url>
-          <line>590</line>
-          <option name="timeStamp" value="91" />
+          <line>952</line>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/graph_nets/graphs.py</url>
+          <line>152</line>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/graph_nets/utils_tf.py</url>
+          <line>637</line>
+          <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test_example/graph_tuple_0126.py</url>
-          <line>15</line>
-          <option name="timeStamp" value="92" />
+          <line>130</line>
+          <option name="timeStamp" value="103" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="93" />
+      <option name="time" value="104" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hand_GNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9000">
-          <caret line="500" column="37" lean-forward="false" selection-start-line="500" selection-start-column="23" selection-end-line="500" selection-end-column="37" />
-          <folding>
-            <element signature="e#295#333#0" expanded="true" />
-            <element signature="e#14080#24330#0" expanded="false" />
-            <element signature="e#14395#14826#0" expanded="false" />
-            <element signature="e#15694#16125#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my_demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/graph_nets/utils_tf.py" />
     <entry file="file://$PROJECT_DIR$/hand_GNN.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7956">
@@ -947,38 +946,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="1017" column="0" lean-forward="false" selection-start-line="1017" selection-start-column="0" selection-end-line="1017" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hand_models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="865">
           <caret line="121" column="49" lean-forward="false" selection-start-line="121" selection-start-column="29" selection-end-line="121" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hand_GNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="13" />
-          <folding>
-            <element signature="e#295#333#0" expanded="true" />
-            <element signature="e#14080#24330#0" expanded="false" />
-            <element signature="e#14395#14826#0" expanded="false" />
-            <element signature="e#15694#16125#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/graph_nets/utils_tf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="567" column="0" lean-forward="false" selection-start-line="567" selection-start-column="0" selection-end-line="567" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -993,13 +964,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/graph_nets/utils_np.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.5/collections/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-270">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="1071" column="0" lean-forward="false" selection-start-line="1071" selection-start-column="0" selection-end-line="1071" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/graph_nets/graphs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="155" column="39" lean-forward="true" selection-start-line="155" selection-start-column="39" selection-end-line="155" selection-end-column="39" />
+          <folding>
+            <element signature="e#5270#5308#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hand_GNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="749" column="0" lean-forward="false" selection-start-line="749" selection-start-column="0" selection-end-line="749" selection-end-column="0" />
+          <folding>
+            <element signature="e#295#333#0" expanded="true" />
+            <element signature="e#14080#24330#0" expanded="false" />
+            <element signature="e#14395#14826#0" expanded="false" />
+            <element signature="e#15694#16125#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/graph_nets/utils_tf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-725">
+          <caret line="636" column="0" lean-forward="true" selection-start-line="636" selection-start-column="0" selection-end-line="636" selection-end-column="0" />
+          <folding>
+            <element signature="e#2469#2507#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test_example/graph_tuple_0126.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding>
-            <element signature="e#411#429#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-268">
+          <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
