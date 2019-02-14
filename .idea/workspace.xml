@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62103a3b-9959-40bd-b077-3b42f9a5a251" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/data_generate/read_facebook_data.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/data_generate/rotate.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/util/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/util/visual.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/test_example/GNN_model_0127.py" afterPath="$PROJECT_DIR$/test_example/GNN_model_0127.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,33 +21,13 @@
     <SUITE FILE_PATH="coverage/GNN_demo$compute_test.coverage" NAME="compute_test Coverage Results" MODIFIED="1547816705924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GNN_demo$hand_GNN_.coverage" NAME="hand_GNN  Coverage Results" MODIFIED="1548488018840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="GNN_model_0127.py" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/test_example/GNN_model_0127.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="578">
-                    <caret line="91" column="112" lean-forward="true" selection-start-line="91" selection-start-column="112" selection-end-line="91" selection-end-column="112" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="hand_GNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hand_GNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="752" column="0" lean-forward="false" selection-start-line="752" selection-start-column="0" selection-end-line="752" selection-end-column="0" />
+            <state relative-caret-position="216">
+              <caret line="763" column="61" lean-forward="false" selection-start-line="763" selection-start-column="61" selection-end-line="763" selection-end-column="61" />
               <folding>
                 <element signature="e#295#333#0" expanded="true" />
                 <element signature="e#14080#24330#0" expanded="false" />
@@ -55,10 +38,71 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="load.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/load.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="my_demo.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_demo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2084">
+              <caret line="454" column="21" lean-forward="false" selection-start-line="454" selection-start-column="16" selection-end-line="454" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="read_facebook_data.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_generate/read_facebook_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="410">
+              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <folding>
+                <element signature="e#22#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="visual.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/util/visual.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="75" column="56" lean-forward="true" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
+              <folding>
+                <element signature="e#39#62#0" expanded="true" />
+                <element signature="e#233#380#0" expanded="false" />
+                <element signature="e#416#2583#0" expanded="false" />
+                <element signature="e#5030#5337#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rotate.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data_generate/rotate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+              <folding>
+                <element signature="e#14#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/sonnet/python/modules/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
+            <state relative-caret-position="6498">
               <caret line="388" column="0" lean-forward="false" selection-start-line="388" selection-start-column="0" selection-end-line="388" selection-end-column="0" />
               <folding />
             </state>
@@ -68,51 +112,31 @@
       <file leaf-file-name="template.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/tensorflow/python/ops/template.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
+            <state relative-caret-position="4626">
               <caret line="267" column="0" lean-forward="false" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hand_models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GNN_model_0127.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_example/GNN_model_0127.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hand_models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hand_models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
+            <state relative-caret-position="2214">
               <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
               <folding>
                 <element signature="e#728#766#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="blocks.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/graph_nets/blocks.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="414" column="0" lean-forward="false" selection-start-line="414" selection-start-column="0" selection-end-line="414" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modules.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/graph_nets/modules.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="351" column="0" lean-forward="false" selection-start-line="351" selection-start-column="0" selection-end-line="351" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="compute_test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_example/compute_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -128,9 +152,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dataset_id</find>
-      <find>graphs.GraphTuple</find>
-      <find>num_training_iterations</find>
       <find>print</find>
       <find>merged</find>
       <find>summary</find>
@@ -158,6 +179,9 @@
       <find>structure_loss</find>
       <find>isNorm</find>
       <find>MLPGraphIndependent</find>
+      <find>test_num</find>
+      <find>type</find>
+      <find>figure_joint</find>
     </findStrings>
     <replaceStrings>
       <replace>base_graph_fun</replace>
@@ -185,6 +209,9 @@
         <option value="$PROJECT_DIR$/hand_GNN.py" />
         <option value="$PROJECT_DIR$/test_example/graph_tuple_0126.py" />
         <option value="$PROJECT_DIR$/test_example/GNN_model_0127.py" />
+        <option value="$PROJECT_DIR$/data_generate/read_facebook_data.py" />
+        <option value="$PROJECT_DIR$/util/visual.py" />
+        <option value="$PROJECT_DIR$/data_generate/rotate.py" />
       </list>
     </option>
   </component>
@@ -194,9 +221,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="347" />
-    <option name="y" value="-4" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="2154" />
+    <option name="y" value="269" />
     <option name="width" value="808" />
     <option name="height" value="742" />
   </component>
@@ -218,6 +245,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -228,14 +256,23 @@
             <path>
               <item name="GNN_hand_research" type="b2602c69:ProjectViewProjectNode" />
               <item name="GNN_hand_research" type="462c0819:PsiDirectoryNode" />
+              <item name="data_generate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GNN_hand_research" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GNN_hand_research" type="462c0819:PsiDirectoryNode" />
               <item name="test_example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GNN_hand_research" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GNN_hand_research" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -244,11 +281,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/test_example" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data_generate" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data_generate" />
+      <recent name="$PROJECT_DIR$/test_example" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -263,7 +302,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.hand_GNN ">
+  <component name="RunManager" selected="Python.rotate">
     <configuration name="GNN_model_0127" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -321,25 +360,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="compute_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/dense/bin/python2.7" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="GNN_demo" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_example/compute_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <configuration name="graph_tuple_0126" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -378,20 +398,39 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="load" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="read_facebook_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/../.conda/envs/dense/bin/python2.7" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/dense/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_generate" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="GNN_demo" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/load.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_generate/read_facebook_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="rotate" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/dense/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_generate" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="GNN_demo" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_generate/rotate.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -525,19 +564,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.Unnamed" />
-      <item index="1" class="java.lang.String" itemvalue="Python.load" />
-      <item index="2" class="java.lang.String" itemvalue="Python.compute_test" />
-      <item index="3" class="java.lang.String" itemvalue="Python.hand_GNN " />
-      <item index="4" class="java.lang.String" itemvalue="Python.graph_tuple_0126" />
-      <item index="5" class="java.lang.String" itemvalue="Python.GNN_model_0127" />
+      <item index="1" class="java.lang.String" itemvalue="Python.hand_GNN " />
+      <item index="2" class="java.lang.String" itemvalue="Python.graph_tuple_0126" />
+      <item index="3" class="java.lang.String" itemvalue="Python.GNN_model_0127" />
+      <item index="4" class="java.lang.String" itemvalue="Python.read_facebook_data" />
+      <item index="5" class="java.lang.String" itemvalue="Python.rotate" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.hand_GNN " />
-        <item index="1" class="java.lang.String" itemvalue="Python.GNN_model_0127" />
-        <item index="2" class="java.lang.String" itemvalue="Python.graph_tuple_0126" />
-        <item index="3" class="java.lang.String" itemvalue="Python.compute_test" />
-        <item index="4" class="java.lang.String" itemvalue="Python.load" />
+        <item index="0" class="java.lang.String" itemvalue="Python.rotate" />
+        <item index="1" class="java.lang.String" itemvalue="Python.read_facebook_data" />
+        <item index="2" class="java.lang.String" itemvalue="Python.hand_GNN " />
+        <item index="3" class="java.lang.String" itemvalue="Python.GNN_model_0127" />
+        <item index="4" class="java.lang.String" itemvalue="Python.graph_tuple_0126" />
       </list>
     </recent_temporary>
   </component>
@@ -573,19 +612,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1615" height="1054" extended-state="6" />
-    <editor active="true" />
+    <frame x="2154" y="269" width="808" height="742" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20557275" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4108911" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46546054" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36320755" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34177214" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34177214" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -722,34 +760,17 @@
           <line>50</line>
           <option name="timeStamp" value="113" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/util/visual.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="114" />
+      <option name="time" value="118" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/base_graph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="20" lean-forward="true" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="50" column="38" lean-forward="false" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my_demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7722">
-          <caret line="429" column="0" lean-forward="false" selection-start-line="429" selection-start-column="0" selection-end-line="429" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/graph_nets/utils_tf.py" />
     <entry file="file://$PROJECT_DIR$/load.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -930,28 +951,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8172">
-          <caret line="454" column="21" lean-forward="false" selection-start-line="454" selection-start-column="16" selection-end-line="454" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/base_graph.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/load.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1001,14 +1004,14 @@
     <entry file="file://$PROJECT_DIR$/test_example/compute_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/graph_nets/blocks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
+        <state relative-caret-position="7308">
           <caret line="414" column="0" lean-forward="false" selection-start-line="414" selection-start-column="0" selection-end-line="414" selection-end-column="0" />
           <folding />
         </state>
@@ -1016,16 +1019,60 @@
     </entry>
     <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/graph_nets/modules.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
+        <state relative-caret-position="6210">
           <caret line="351" column="0" lean-forward="false" selection-start-line="351" selection-start-column="0" selection-end-line="351" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/sonnet/python/modules/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6498">
+          <caret line="388" column="0" lean-forward="false" selection-start-line="388" selection-start-column="0" selection-end-line="388" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hand_models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2214">
+          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+          <folding>
+            <element signature="e#728#766#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/tensorflow/python/ops/template.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4626">
+          <caret line="267" column="0" lean-forward="false" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/load.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2084">
+          <caret line="454" column="21" lean-forward="false" selection-start-line="454" selection-start-column="16" selection-end-line="454" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hand_GNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="752" column="0" lean-forward="false" selection-start-line="752" selection-start-column="0" selection-end-line="752" selection-end-column="0" />
+        <state relative-caret-position="216">
+          <caret line="763" column="61" lean-forward="false" selection-start-line="763" selection-start-column="61" selection-end-line="763" selection-end-column="61" />
           <folding>
             <element signature="e#295#333#0" expanded="true" />
             <element signature="e#14080#24330#0" expanded="false" />
@@ -1035,37 +1082,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/tensorflow/python/ops/template.py">
+    <entry file="file://$PROJECT_DIR$/data_generate/read_facebook_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="267" column="0" lean-forward="false" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/sonnet/python/modules/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="388" column="0" lean-forward="false" selection-start-line="388" selection-start-column="0" selection-end-line="388" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hand_models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+        <state relative-caret-position="410">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
-            <element signature="e#728#766#0" expanded="true" />
+            <element signature="e#22#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_example/GNN_model_0127.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="91" column="112" lean-forward="true" selection-start-line="91" selection-start-column="112" selection-end-line="91" selection-end-column="112" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/visual.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="75" column="56" lean-forward="true" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
+          <folding>
+            <element signature="e#39#62#0" expanded="true" />
+            <element signature="e#233#380#0" expanded="false" />
+            <element signature="e#416#2583#0" expanded="false" />
+            <element signature="e#5030#5337#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_generate/rotate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+          <folding>
+            <element signature="e#14#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
