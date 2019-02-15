@@ -33,6 +33,24 @@ def file_name(file_dir):
         #print('sub_dirs:', dirs)  # 当前路径下所有子目录
         #print('files:', files)  # 当前路径下所有非目录子文件
 
+from util.coordinate_transform.transform import Transform, Vector, Rotation
+def x_Rotation():
+    pass
+def y_Rotation():
+    pass
+def z_Rotation(pose, angel):
+    pose_z = np.asarray(pose)
+    #获取轴线
+    axis = Vector(pose[7, :] - pose[19, :])
+    R_matrix = Rotation(2*np.pi/360*angel, axis)
+    #变成vector对象的数组
+    pose_V = np.array([Vector(pose[i, :]) for i in range(20)])
+    #旋转
+    for i in range(20):
+        pose_V[i] = R_matrix(pose_V[i])
+        pose_z[i, :] = [pose_V[i].co[0], pose_V[i].co[1], pose_V[i].co[2]]
+    #恢复成ndarray
+    return pose_z
 
 file_name_all = file_name('/home/chen/Documents/.git/Mocap_SIG18_Data/training_data')
 for file_name in file_name_all:
@@ -43,35 +61,17 @@ for file_name in file_name_all:
     seqid = file_name_detail[9]
     pose_num = 0
     for pose_id in onefile_data:
-        pose_num = pose_num+1
-        figure_joint_skeleton(pose_id, "/media/chen/4CBEA7F1BEA7D1AE/Download/hand_dataset/shake/"
-                              +userid+"/"+capid+"/"+seqid+"/", pose_num)
 
-"""
-receive = []
-sender = []
+        pose_id = np.reshape(pose_id, (19, 3))
+        pose_id_back = (pose_id[16,:]+pose_id[17,:]+pose_id[18,:])/3.0
+        pose_id_back = pose_id_back[np.newaxis, :]
+        pose_id = np.concatenate([pose_id,pose_id_back])
 
-for i in range(19):
-    for j in range(19):
-        receive.append(i)
-        sender.append(j)
-print(sender)
-print('\n')
-print(receive)
+        #暂且用back的三个点的中点和中指指根作为轴线，这有待改进，因为关系到模拟效果
+        # 开始旋转
+        for angel_j in range(360):
+            pose_id_z = z_Rotation(pose_id, 1)
 
-
-a = np.arange(0, 10, 1)
-b = np.arange(10, 20, 1)
-for i in range(10):
-    print(a, b)
-    # result:[0 1 2 3 4 5 6 7 8 9] [10 11 12 13 14 15 16 17 18 19]
-    state = np.random.get_state()
-    np.random.shuffle(a)
-    print(a)
-    # result:[6 4 5 3 7 2 0 1 8 9]
-    np.random.set_state(state)
-    np.random.shuffle(b)
-    print(b)
-    # result:[16 14 15 13 17 12 10 11 18 19]
-
-"""
+            figure_joint_skeleton(pose_id, "/media/chen/4CBEA7F1BEA7D1AE/Download/hand_dataset/shake/"
+                                  +userid+"/"+capid+"/"+seqid+"/", pose_num+angel_j)
+        pose_num = pose_num + 1

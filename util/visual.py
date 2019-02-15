@@ -3,6 +3,7 @@ import tensorflow as tf
 import tfplot, matplotlib, os
 import matplotlib.lines as lines
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 FLAGS = tf.app.flags.FLAGS
 
@@ -57,7 +58,7 @@ def figure_joint(dm, uvd_pt):
     return fig
 
 """
-ThumbCMC			ThumbMCP			ThumbIP			ThumbTip	123	
+ThumbCMC			ThumbMCP			ThumbIP			ThumbTip   0123	
 IndexMCP			IndexPIP			IndexTip			        456
 MiddleMCP			MiddlePIP			MiddleTip			        789
 RingMCP			RingPIP			RingTip			                    10,11,12
@@ -65,46 +66,57 @@ PinkyMCP			PinkyPIP			PinkyTip			        13,14,15
 BackHand1			BackHand2			BackHand3	
 """
 def figure_joint_skeleton(uvd_pt,path,test_num):
-    uvd_pt = np.reshape(uvd_pt, (19, 3))
-    uvd_pt = uvd_pt - uvd_pt[16, :]
+    #uvd_pt = np.reshape(uvd_pt, (20, 3))
+    uvd_pt = uvd_pt - uvd_pt[19, :]
     fig = plt.figure(1)
     fig.clear()
-    ax = fig.add_subplot(1, 1, 1)
+    ax = plt.subplot(111, projection='3d')
 
     fig_color = ['c', 'm', 'y', 'g', 'r']
     ax.plot([uvd_pt[0 * 3 + 0, 0], uvd_pt[0 * 3 + 1, 0]],
-            [uvd_pt[0 * 3 + 0, 1], uvd_pt[0 * 3 + 1, 1]], color=fig_color[0], linewidth=3)
-    ax.scatter(uvd_pt[0 * 3 + 0, 0], uvd_pt[0 * 3 + 0, 1], s=60, c=fig_color[0])
+            [uvd_pt[0 * 3 + 0, 1], uvd_pt[0 * 3 + 1, 1]],
+            [uvd_pt[0 * 3 + 0, 2], uvd_pt[0 * 3 + 1, 2]], color=fig_color[0], linewidth=3)
+    ax.scatter(uvd_pt[0 * 3 + 0, 0], uvd_pt[0 * 3 + 0, 1], uvd_pt[0 * 3 + 0, 2], s=60, c=fig_color[0])
 
     for f in range(5):
         ax.plot([uvd_pt[f * 3 + 1, 0], uvd_pt[f * 3 + 2, 0]],
-                [uvd_pt[f * 3 + 1, 1], uvd_pt[f * 3 + 2, 1]], color=fig_color[f], linewidth=3)
+                [uvd_pt[f * 3 + 1, 1], uvd_pt[f * 3 + 2, 1]],
+                [uvd_pt[f * 3 + 1, 2], uvd_pt[f * 3 + 2, 2]], color=fig_color[f], linewidth=3)
         ax.plot([uvd_pt[f * 3 + 2, 0], uvd_pt[f * 3 + 3, 0]],
-                [uvd_pt[f * 3 + 2, 1], uvd_pt[f * 3 + 3, 1]], color=fig_color[f], linewidth=3)
-        if f ==0:
-            ax.plot([uvd_pt[16, 0], uvd_pt[f * 3 + 0, 0]],
-                    [uvd_pt[16, 1], uvd_pt[f * 3 + 0, 1]], color=fig_color[f], linewidth=3)
+                [uvd_pt[f * 3 + 2, 1], uvd_pt[f * 3 + 3, 1]],
+                [uvd_pt[f * 3 + 2, 2], uvd_pt[f * 3 + 3, 2]], color=fig_color[f], linewidth=3)
+
+        if f == 0:
+            ax.plot([uvd_pt[19, 0], uvd_pt[f * 3 + 0, 0]],
+                    [uvd_pt[19, 1], uvd_pt[f * 3 + 0, 1]],
+                    [uvd_pt[19, 2], uvd_pt[f * 3 + 0, 2]], color=fig_color[f], linewidth=3)
         else:
-            ax.plot([uvd_pt[16, 0], uvd_pt[f * 3 + 1, 0]],
-                    [uvd_pt[16, 1], uvd_pt[f * 3 + 1, 1]], color=fig_color[f], linewidth=3)
+            ax.plot([uvd_pt[19, 0], uvd_pt[f * 3 + 1, 0]],
+                    [uvd_pt[19, 1], uvd_pt[f * 3 + 1, 1]],
+                    [uvd_pt[19, 2], uvd_pt[f * 3 + 1, 2]], color=fig_color[f], linewidth=3)
 
-        ax.scatter(uvd_pt[f * 3 + 1, 0], uvd_pt[f * 3 + 1, 1], s=60, c=fig_color[f])
-        ax.scatter(uvd_pt[f * 3 + 2, 0], uvd_pt[f * 3 + 2, 1], s=60, c=fig_color[f])
-        ax.scatter(uvd_pt[f * 3 + 3, 0], uvd_pt[f * 3 + 3, 1], s=60, c=fig_color[f])
+        ax.scatter(uvd_pt[f * 3 + 1, 0], uvd_pt[f * 3 + 1, 1], uvd_pt[f * 3 + 1, 2], s=60, c=fig_color[f])
+        ax.scatter(uvd_pt[f * 3 + 2, 0], uvd_pt[f * 3 + 2, 1], uvd_pt[f * 3 + 2, 2], s=60, c=fig_color[f])
+        ax.scatter(uvd_pt[f * 3 + 3, 0], uvd_pt[f * 3 + 3, 1], uvd_pt[f * 3 + 3, 2], s=60, c=fig_color[f])
 
-    ax.scatter(uvd_pt[16, 0], uvd_pt[16, 1], s=100, c='b')
-    ax.scatter(uvd_pt[17, 0], uvd_pt[17, 1], s=100, c='b')
-    ax.scatter(uvd_pt[18, 0], uvd_pt[18, 1], s=100, c='b')
+    ax.scatter(uvd_pt[16, 0], uvd_pt[16, 1], uvd_pt[16, 2], s=100, c='b')
+    ax.scatter(uvd_pt[17, 0], uvd_pt[17, 1], uvd_pt[17, 2], s=100, c='b')
+    ax.scatter(uvd_pt[18, 0], uvd_pt[18, 1], uvd_pt[18, 2], s=100, c='b')
+    ax.scatter(uvd_pt[19, 0], uvd_pt[19, 1], uvd_pt[19, 2], s=100, c='b')
 
     ax.plot([uvd_pt[16, 0], uvd_pt[17, 0]],
-            [uvd_pt[16, 1], uvd_pt[17, 1]], color='b', linewidth=3)
+            [uvd_pt[16, 1], uvd_pt[17, 1]],
+            [uvd_pt[16, 2], uvd_pt[17, 2]], color='b', linewidth=3)
     ax.plot([uvd_pt[17, 0], uvd_pt[18, 0]],
-            [uvd_pt[17, 1], uvd_pt[18, 1]], color='b', linewidth=3)
+            [uvd_pt[17, 1], uvd_pt[18, 1]],
+            [uvd_pt[17, 2], uvd_pt[18, 2]], color='b', linewidth=3)
     ax.plot([uvd_pt[16, 0], uvd_pt[18, 0]],
-            [uvd_pt[16, 1], uvd_pt[18, 1]], color='b', linewidth=3)
+            [uvd_pt[16, 1], uvd_pt[18, 1]],
+            [uvd_pt[16, 2], uvd_pt[18, 2]], color='b', linewidth=3)
 
     plt.ylim(-100, 100)
     plt.xlim(-100, 100)
+    ax.set_zlim(-100, 100)
     if not os.path.isdir(path):
         os.makedirs(path)
         print("creat path : " + path)
