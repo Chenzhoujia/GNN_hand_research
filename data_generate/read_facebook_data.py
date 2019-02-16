@@ -48,9 +48,26 @@ def x_Rotation(pose, angel):
         pose_z[i, :] = [pose_V[i].co[0], pose_V[i].co[1], pose_V[i].co[2]]
     #恢复成ndarray
     return pose_z
+# 暂且用back的三个点形成的中点（19）与小拇指指根（13）、食指指根（4）形成的平面的垂线，这有待改进（例如改成有波动的），因为关系到模拟效果
+# (a0,a1,a2)x(b0,b1,b2)=(a1b2-a2b1,a2b0-a0b2,a0b1-a1b0)
+def y_Rotation(pose, angel):
+    pose_z = np.asarray(pose)
+    #获取轴线
+    ox = pose[13, :] - pose[19, :]
+    oy = pose[4 , :] - pose[19, :]
+    axis = Vector(np.array([ox[1] * oy[2] - ox[2] * oy[1],
+                     ox[2] * oy[0] - ox[0] * oy[2],
+                     ox[0] * oy[1] - ox[1] * oy[0]]))
+    R_matrix = Rotation(2*np.pi/360*angel, axis)
+    #变成vector对象的数组
+    pose_V = np.array([Vector(pose[i, :]) for i in range(20)])
+    #旋转
+    for i in range(20):
+        pose_V[i] = R_matrix(pose_V[i])
+        pose_z[i, :] = [pose_V[i].co[0], pose_V[i].co[1], pose_V[i].co[2]]
+    #恢复成ndarray
+    return pose_z
 
-def y_Rotation():
-    pass
 #暂且用back的三个点的中点和中指指根作为轴线，这有待改进（例如改成有随机扰动的），因为关系到模拟效果
 def z_Rotation(pose, angel):
     pose_z = np.asarray(pose)
@@ -74,17 +91,23 @@ for file_name in file_name_all:
     capid = file_name_detail[8]
     seqid = file_name_detail[9]
     pose_num = 0
+    #根据视频设计震颤函数
+    #按照120hz，4~6HZ 采样震颤函数 形成数组
     for pose_id in onefile_data:
-
         pose_id = np.reshape(pose_id, (19, 3))
         pose_id_back = (pose_id[16,:]+pose_id[17,:]+pose_id[18,:])/3.0
         pose_id_back = pose_id_back[np.newaxis, :]
         pose_id = np.concatenate([pose_id,pose_id_back])
 
 
+        #判断文件夹是否变更
+        #从震颤数组中采样选取旋转幅度
+        #保存bin文件
+
+
         # 开始旋转
         for angel_j in range(360):
-            x_Rotation(pose_id, 5)
+            y_Rotation(pose_id, 5)
 
             figure_joint_skeleton(pose_id, "/media/chen/4CBEA7F1BEA7D1AE/Download/hand_dataset/shake/"
                                   +userid+"/"+capid+"/"+seqid+"/", pose_num+angel_j)
