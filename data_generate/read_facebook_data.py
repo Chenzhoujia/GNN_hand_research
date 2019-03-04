@@ -97,7 +97,7 @@ for file_name in file_name_all:
     step_num = 0
 
     # 根据视频设计震颤函数 按照120hz，4~6HZ, 决定振幅,频率 采样震颤函数 形成数组
-    rot_ax = 2#0 -> x ; 1 -> y ; 2 -> z
+    rot_ax = 0 #0 -> x ; 1 -> y ; 2 -> z
     amp = random.uniform(30, 60)
     fre = random.uniform(4, 6)
     time_step = np.arange(0, np.pi * 2, np.pi * 2 / (120/fre))
@@ -120,16 +120,14 @@ for file_name in file_name_all:
             pose_num = 0
 
         # 开始旋转
-        #figure_joint_skeleton(pose_id, "/media/chen/4CBEA7F1BEA7D1AE/Download/hand_dataset/shake/"
-        #                      +userid+"/"+capid+"/"+seqid+"/", step_num)
         if rot_ax==0:
             x_Rotation(pose_id, angel_cur)
         elif  rot_ax==1:
             y_Rotation(pose_id, angel_cur)
-        else:
+        elif rot_ax==2:
             z_Rotation(pose_id, angel_cur)
-        #figure_joint_skeleton(pose_id, "/media/chen/4CBEA7F1BEA7D1AE/Download/hand_dataset/shake/"
-        #                      +userid+"/"+capid+"/"+seqid+"/", step_num+1000)
+        else:
+            pass
 
         rot_inf = np.array([np.float64(amp), np.float64(fre), angel_cur])
         rot_inf2 = np.array([np.float64(rot_ax), np.float64(0), np.float64(0)])
@@ -143,11 +141,15 @@ for file_name in file_name_all:
         print("creat path : " + path)
     shape = onefile_data_pose.shape
     #np.savetxt(path + "/" + seqid+".txt", onefile_data_pose.reshape(shape[0], -1))  # 缺省按照'%.18e'格式保存数据，以空格分隔
-    # read test
 
-    onefile_data_pose_r = np.loadtxt(path +"/" + seqid+".txt")
+    # read test
+    #onefile_data_pose_r = np.loadtxt(path +"/" + seqid+".txt")
+    onefile_data_pose_r = onefile_data_pose
     onefile_data_pose_r = onefile_data_pose_r.reshape(shape[0],shape[1],shape[2])
     onefile_data_pose_r = onefile_data_pose_r[:,0:shape[1]-2,:]
+    path = "/media/chen/4CBEA7F1BEA7D1AE/Download/hand_dataset/shake_view/"+userid+"/"+capid
+    if not os.path.isdir(path):
+        os.makedirs(path)
+        print("creat path : " + path)
     for test_read_i in range(shape[0]):
         figure_joint_skeleton(onefile_data_pose_r[test_read_i,:,:] ,path + "/"+seqid+"/", test_read_i)
-    
