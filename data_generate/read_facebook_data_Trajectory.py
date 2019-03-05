@@ -1,7 +1,7 @@
 # -- coding: utf-8 --
 import numpy as np
 import os, random, struct, math
-from util.visual import figure_joint_skeleton
+from util.visual import figure_joint_skeleton, figure_hand_back
 #filename = '/home/chen/Documents/.git/Mocap_SIG18_Data/training_data/User1/capture1/sequence.1_training_dense_left.trc'
 def read_file(filename):
     pos = []
@@ -90,129 +90,182 @@ def z_Rotation(pose, angel):
     #恢复成ndarray
     return pose_z
 
-file_name_all = get_file_name('/home/chen/Documents/.git/Mocap_SIG18_Data/training_data',"trc")
+pose_file_name_all = get_file_name('/home/chen/Documents/.git/Mocap_SIG18_Data/training_data',"trc")
 tremor_file_name_all = get_file_name('/media/chen/4CBEA7F1BEA7D1AE/Download/hand_dataset/pakinson/extract_data',"txt")
-i_userid_sel_list = ["T008"]
-i_seqid_sel_list = ["2_Hz_lower","Counting","Finger_tapping","Hands_in_pronation","Months_backward","Playing_piano","Thumbs_up","Top_nose_left","Top_nose_right","Top_top"]
-for i_userid_sel in i_userid_sel_list:
-    for i_seqid_sel in i_seqid_sel_list:
-        for file_name in file_name_all:
-            onefile_data = read_file(file_name)
-            file_name_detail = file_name.split('/')
-            userid = file_name_detail[7]
-            capid = file_name_detail[8]
-            seqid = file_name_detail[9]
-            pose_num = 0
 
-            # 根据视频设计震颤函数 按照120hz，4~6HZ, 决定振幅,频率 采样震颤函数 形成数组
-            """
-            rot_ax = 0 #0 -> x ; 1 -> y ; 2 -> z
-            amp = random.uniform(30, 60)
-            fre = random.uniform(4, 6)
-            time_step = np.arange(0, np.pi * 2, np.pi * 2 / (120/fre))
-            tremor_amplitude = amp * np.sin(time_step)
-            """
-            #获取已有的完整xyz三轴的震荡曲线
+tremor_file_name_all = np.array(tremor_file_name_all)
+tremor_file_name_all = np.reshape(tremor_file_name_all,(-1,6))
+tremor_file_name_all = [tremor_file_name_all[142]]
+for tremor_file_name_index, tremor_file_name in enumerate(tremor_file_name_all):
+    # 验证，分割，读取，幅度变化
+    #分割
+    tremor_file_name_detail = tremor_file_name[0].split('/')
+    tremor_capid = tremor_file_name_detail[8]
+    tremor_seqid = tremor_file_name_detail[9]
+    #验证
+    exame_id = 0
+    for i in [0,1,2,4,5,6]:
+        exam_detail = tremor_file_name[exame_id].split('/')
+        exam_capid = exam_detail[8]
+        exam_seqid = exam_detail[9]
+        exam_xyzid = exam_detail[10]
+        if exam_capid!=tremor_capid or exam_seqid!=tremor_seqid:
+            raise RuntimeError("验证文件名时出错")
+        if exam_xyzid!=str(i).zfill(2)+".txt":
+            raise RuntimeError("验证文件名时出错")
+        exame_id+=1
+    #读取
+    tremor_x = np.loadtxt(tremor_file_name[0])
+    tremor_y = np.loadtxt(tremor_file_name[1]) #y-axis pointing towards the fingers.
+    tremor_z = np.loadtxt(tremor_file_name[2]) #z-axis pointing away from the skin surface
+    #幅度变化
+    modify_amp = 5000
+    tremor_x /= modify_amp
+    tremor_y /= modify_amp
+    tremor_z /= modify_amp
 
+    for pose_file_name in pose_file_name_all:
 
-            tremor_file_name_all_tsv = []
-            for i in tremor_file_name_all:
-                i_detail = i.split('/')
-                i_userid = i_detail[8]
-                i_seqid = i_detail[9]
-                if i.endswith("txt") and i_userid.startswith(i_userid_sel) and i_seqid.startswith(i_seqid_sel):
-                    tremor_file_name_all_tsv.append(i)
-            tremor_file_name_all = tremor_file_name_all_tsv
-            tremor_file_name_all_tsv = []
+        pose_num = 0
+        pose_file_name_detail = pose_file_name.split('/')
+        pose_userid = pose_file_name_detail[7]
+        pose_capid = pose_file_name_detail[8]
+        pose_seqid = pose_file_name_detail[9]
 
-            if len(tremor_file_name_all)!=6:
-                raise RuntimeError("file name is"+tremor_file_name_all)
+        onefile_data = read_file(pose_file_name)
+        onefile_data = onefile_data[:,48:]
+
+        # 为了匹配如下加速度计的方向的单位向量在pose坐标系中的分量
+        # y-axis pointing towards the fingers.
+        # z-axis pointing away from the skin surface
+        for onefile_data_i_index, onefile_data_i in enumerate(onefile_data):
+            # 暂且用back的三个点形成的三角形中位线作为x-axis
+            onefile_data_i = np.reshape(onefile_data_i, (3, 3))
+            x_axis = np.array(onefile_data_i[2, :] - (onefile_data_i[1, :] + onefile_data_i[0, :]) / 2)
+            x_axis = x_axis/np.linalg.norm(x_axis, ord=2)
+
+            y_axis = np.array(onefile_data_i[1, :] - onefile_data_i[0, :])
+            y_axis = y_axis / np.linalg.norm(y_axis, ord=2)
+
+            z_axis_ox = onefile_data_i[2, :] - onefile_data_i[1, :]
+            z_axis_oy = onefile_data_i[0, :] - onefile_data_i[1, :]
+            z_axis = np.array([z_axis_ox[1] * z_axis_oy[2] - z_axis_ox[2] * z_axis_oy[1],
+                              z_axis_ox[2] * z_axis_oy[0] - z_axis_ox[0] * z_axis_oy[2],
+                              z_axis_ox[0] * z_axis_oy[1] - z_axis_ox[1] * z_axis_oy[0]])
+            z_axis = z_axis / np.linalg.norm(z_axis, ord=2)
+            xyz_axis = np.concatenate((x_axis, y_axis), axis=0)
+            xyz_axis = np.concatenate((xyz_axis, z_axis), axis=0)
+
+            if onefile_data_i_index==0:
+                onefile_xyz_axis = np.expand_dims(xyz_axis, axis=0)
             else:
-                #: (0) sensor-1 x, (1) sensor-1 y,(2) sensor-1 z, (4) sensor-2 x, (5) sensor-2 y, (6) sensor-2 z
-                # 手背是sensor-1，手臂是sensor-2
-                if tremor_file_name_all[0].endswith("00.txt") and tremor_file_name_all[1].endswith("01.txt") and tremor_file_name_all[2].endswith("02.txt"):
-                    tremor_x = np.loadtxt(tremor_file_name_all[0])
-                    tremor_y = np.loadtxt(tremor_file_name_all[1])
-                    tremor_z = np.loadtxt(tremor_file_name_all[2])
-                else:
-                    raise RuntimeError("wrong order")
+                onefile_xyz_axis = np.concatenate((onefile_xyz_axis, np.expand_dims(xyz_axis, axis=0)), axis=0)
 
-                if np.size(tremor_x)!=np.size(tremor_y)!=np.size(tremor_z):
-                    raise RuntimeError("XYZ different size")
+        #onefile_data = np.reshape(onefile_data, (-1 ,3, 3))
+
+        #时间匹配
+        tremor_time = np.size(tremor_x)/1000.0
+        pose_time = np.size(onefile_data,0)/120.0
+        if pose_time>tremor_time:
+            raise RuntimeError("pose_time is: "+str(pose_time)+"tremor_time is:"+str(tremor_time))
+        repeat_time = tremor_time/pose_time
+        repeat_time = int(math.floor(repeat_time))
+
+            #pose
+        onefile_data_reverse = np.zeros((np.size(onefile_data, 0), np.size(onefile_data, 1)))
+        for trverse_i in range(np.size(onefile_data, 0)):
+            onefile_data_reverse[trverse_i,:] = onefile_data[np.size(onefile_data, 0) - trverse_i -1,:]
+
+        onefile_data_repeat = onefile_data
+        for repeat_time_i in range(repeat_time-1):
+            if repeat_time_i%2==0:
+                onefile_data_repeat = np.concatenate((onefile_data_repeat, onefile_data_reverse), axis=0)
+            else:
+                onefile_data_repeat = np.concatenate((onefile_data_repeat, onefile_data), axis=0)
+            #坐标轴
+        onefile_xyz_axis_reverse = np.zeros((np.size(onefile_xyz_axis, 0), np.size(onefile_xyz_axis, 1)))
+        for trverse_i in range(np.size(onefile_xyz_axis, 0)):
+            onefile_xyz_axis_reverse[trverse_i, :] = onefile_xyz_axis[np.size(onefile_xyz_axis, 0) - trverse_i - 1, :]
+
+        onefile_xyz_axis_repeat = onefile_xyz_axis
+        for repeat_time_i in range(repeat_time - 1):
+            if repeat_time_i % 2 == 0:
+                onefile_xyz_axis_repeat = np.concatenate((onefile_xyz_axis_repeat, onefile_xyz_axis_reverse), axis=0)
+            else:
+                onefile_xyz_axis_repeat = np.concatenate((onefile_xyz_axis_repeat, onefile_xyz_axis), axis=0)
 
 
-            #时间匹配
-            tremor_time = np.size(tremor_x)/1000.0
-            pose_time = np.size(onefile_data,0)/120.0
-            if pose_time>tremor_time:
-                raise RuntimeError("pose_time is: "+str(pose_time)+"tremor_time is:"+str(tremor_time))
-            repeat_time = tremor_time/pose_time
-            repeat_time = int(math.floor(repeat_time))
-            #onefile_data_repeat = np.zeros((repeat_time*np.size(onefile_data,0), np.size(onefile_data,1)))
-            onefile_data_reverse = np.zeros((np.size(onefile_data, 0), np.size(onefile_data, 1)))
-            for trverse_i in range(np.size(onefile_data, 0)):
-                onefile_data_reverse[trverse_i,:] = onefile_data[np.size(onefile_data, 0) - trverse_i -1,:]
-            onefile_data_repeat = onefile_data
-            for repeat_time_i in range(repeat_time-1):
-                if repeat_time_i%2==0:
-                    onefile_data_repeat = np.concatenate((onefile_data_repeat, onefile_data_reverse), axis=0)
-                else:
-                    onefile_data_repeat = np.concatenate((onefile_data_repeat, onefile_data), axis=0)
-            #采样tremor
-            sampl_interval = int(math.floor(1000.0/120.0))
-            if np.size(onefile_data_repeat, 0)*sampl_interval>np.size(tremor_x):
-                raise RuntimeError("too much sample point, which is wired")
-            onefile_data_repeat_ampx = np.zeros(np.size(onefile_data_repeat, 0))
-            onefile_data_repeat_ampy = np.zeros(np.size(onefile_data_repeat, 0))
-            onefile_data_repeat_ampz = np.zeros(np.size(onefile_data_repeat, 0))
-            for amp_i in range(np.size(onefile_data_repeat, 0)):
-                onefile_data_repeat_ampx[amp_i] = tremor_x[amp_i * sampl_interval]
-                onefile_data_repeat_ampy[amp_i] = tremor_y[amp_i * sampl_interval]
-                onefile_data_repeat_ampz[amp_i] = tremor_z[amp_i * sampl_interval]
-            #幅度变换
-            onefile_data_repeat_ampx = onefile_data_repeat_ampx / 2500000.0 * 45.0  #左右 -> y_Rotation
-            onefile_data_repeat_ampy = onefile_data_repeat_ampy / 2500000.0 * 45.0  #y-axis pointing towards the fingers.
-            onefile_data_repeat_ampz = onefile_data_repeat_ampz / 2500000.0 * 45.0  #z-axis pointing away from the skin surface 上下 -> x_Rotation
-            onefile_data_pose = []
-            for pose_id in onefile_data_repeat:
-                pose_id = np.reshape(pose_id, (19, 3))
-                pose_id_back = (pose_id[16,:]+pose_id[17,:]+pose_id[18,:])/3.0
-                pose_id_back = pose_id_back[np.newaxis, :]
-                pose_id = np.concatenate([pose_id,pose_id_back])
-                #pose_saved = np.asarray(pose_id)
+        #采样tremor
+        sampl_interval = 8#int(math.floor(1000.0/120.0))
+        if np.size(onefile_data_repeat, 0)*sampl_interval>np.size(tremor_x):
+            raise RuntimeError("too much sample point, which is wired")
+        onefile_data_repeat_ampx = np.zeros(np.size(onefile_data_repeat, 0))
+        onefile_data_repeat_ampy = np.zeros(np.size(onefile_data_repeat, 0))
+        onefile_data_repeat_ampz = np.zeros(np.size(onefile_data_repeat, 0))
+        for amp_i in range(np.size(onefile_data_repeat, 0)):
+            onefile_data_repeat_ampx[amp_i] = tremor_x[amp_i * sampl_interval]
+            onefile_data_repeat_ampy[amp_i] = tremor_y[amp_i * sampl_interval]
+            onefile_data_repeat_ampz[amp_i] = tremor_z[amp_i * sampl_interval]
 
-                #从震颤数组中采样选取幅度
-                angel_cur_x = onefile_data_repeat_ampx[pose_num]
-                angel_cur_y = onefile_data_repeat_ampy[pose_num]
-                angel_cur_z = onefile_data_repeat_ampz[pose_num]
-                pose_num = pose_num + 1
-                # 开始旋转
-                x_Rotation(pose_id, angel_cur_z)
-                y_Rotation(pose_id, angel_cur_x)
-                #z_Rotation(pose_id, angel_cur_z)
+        #将加速度计的坐标轴的三个振幅x'y'z'，映射到世界坐标系上(xyz)(xyz)(xyz)
+        for mapping_i in range(3):
+            onefile_xyz_axis_repeat[:, mapping_i] *= onefile_data_repeat_ampx
+            onefile_xyz_axis_repeat[:, mapping_i+3] *= onefile_data_repeat_ampy
+            onefile_xyz_axis_repeat[:, mapping_i+6] *= onefile_data_repeat_ampz
 
-                rot_inf = np.array([np.float64(angel_cur_z), np.float64(angel_cur_x), np.float64(0)])
+        onefile_xyz_axis_repeat[:, 0] = onefile_xyz_axis_repeat[:, 0] + onefile_xyz_axis_repeat[:,
+                                                                        3] + onefile_xyz_axis_repeat[:, 6]
+        onefile_xyz_axis_repeat[:, 1] = onefile_xyz_axis_repeat[:, 1] + onefile_xyz_axis_repeat[:,
+                                                                        4] + onefile_xyz_axis_repeat[:, 7]
+        onefile_xyz_axis_repeat[:, 2] = onefile_xyz_axis_repeat[:, 2] + onefile_xyz_axis_repeat[:,
+                                                                        5] + onefile_xyz_axis_repeat[:, 8]
 
-                pose_id = np.concatenate([pose_id, rot_inf[np.newaxis, :]])
-                onefile_data_pose.append(pose_id)
-            onefile_data_pose = np.array(onefile_data_pose)
-            #保存txt文件
-            path_r_txt = "/media/chen/4CBEA7F1BEA7D1AE/Download/hand_dataset/shake/"+i_userid_sel+ "/" + i_seqid_sel+"/"+userid +"/"+capid
-            if not os.path.isdir(path_r_txt):
-                os.makedirs(path_r_txt)
-                print("creat path : " + path_r_txt)
-            shape = onefile_data_pose.shape
-            np.savetxt(path_r_txt + "/" + seqid + ".txt", onefile_data_pose.reshape(shape[0], -1))  # 缺省按照'%.18e'格式保存数据，以空格分隔
-            """
-            # read test
-            #onefile_data_pose_r = np.loadtxt(path +"/" + seqid+".txt")
-            onefile_data_pose_r = onefile_data_pose
-            onefile_data_pose_r = onefile_data_pose_r.reshape(shape[0],shape[1],shape[2])
-            onefile_data_pose_r = onefile_data_pose_r[:,0:shape[1]-1,:]
-            path = "/media/chen/4CBEA7F1BEA7D1AE/Download/hand_dataset/shake_view/"+userid+"/"+capid
-            if not os.path.isdir(path):
-                os.makedirs(path)
-                print("creat path : " + path)
-            for test_read_i in range(shape[0]):
-                figure_joint_skeleton(onefile_data_pose_r[test_read_i,:,:] ,path + "/"+seqid+"/", test_read_i)
-            """
+        #交配 onefile_data_repeat(x,9)  tremor_x(x),根据可视化效果看看是否需要调整坐标系匹配
+        onefile_data_repeat_saved = np.array(onefile_data_repeat)
+
+        onefile_data_repeat[:, 0] += onefile_xyz_axis_repeat[:, 0]
+        onefile_data_repeat[:, 3] += onefile_xyz_axis_repeat[:, 0]
+        onefile_data_repeat[:, 6] += onefile_xyz_axis_repeat[:, 0]
+
+        onefile_data_repeat[:, 1] += onefile_xyz_axis_repeat[:, 1]
+        onefile_data_repeat[:, 4] += onefile_xyz_axis_repeat[:, 1]
+        onefile_data_repeat[:, 7] += onefile_xyz_axis_repeat[:, 1]
+
+        onefile_data_repeat[:, 2] += onefile_xyz_axis_repeat[:, 2]
+        onefile_data_repeat[:, 5] += onefile_xyz_axis_repeat[:, 2]
+        onefile_data_repeat[:, 8] += onefile_xyz_axis_repeat[:, 2]
+
+        #保存txt文件
+        path_r_txt = "/media/chen/4CBEA7F1BEA7D1AE/Download/hand_dataset/pakinson/shake_tra/"\
+                     +tremor_capid+ "/" + tremor_seqid+"/"+pose_userid +"/"+pose_capid
+        if not os.path.isdir(path_r_txt):
+            os.makedirs(path_r_txt)
+            print("creat path : " + path_r_txt)
+        np.savetxt(path_r_txt + "/" + pose_seqid + "_shake.txt", onefile_data_repeat)  # 缺省按照'%.18e'格式保存数据，以空格分隔
+
+        np.savetxt(path_r_txt + "/" + pose_seqid + "_gt.txt", onefile_data_repeat_saved)  # 缺省按照'%.18e'格式保存数据，以空格分隔
+
+        """
+        #通过轨迹效果调整坐标轴和缩放尺度
+        path_view_txt = "/media/chen/4CBEA7F1BEA7D1AE/Download/hand_dataset/pakinson/shake_tra/view/"\
+                     +tremor_capid+ "/" + tremor_seqid+"/"+pose_userid +"/"+pose_capid + "/" + pose_seqid+ "/"
+        if not os.path.isdir(path_view_txt):
+            os.makedirs(path_view_txt)
+            print("creat path : " + path_view_txt)
+        shape_onefile_data_repeat = np.size(onefile_data_repeat,0)
+        for test_read_i in range(shape_onefile_data_repeat):
+            figure_hand_back(onefile_data_repeat[test_read_i,:],onefile_data_repeat_saved[test_read_i,:] ,path_view_txt, test_read_i)
+        """
+        """
+        # read test
+        #onefile_data_pose_r = np.loadtxt(path +"/" + seqid+".txt")
+        onefile_data_pose_r = onefile_data_pose
+        onefile_data_pose_r = onefile_data_pose_r.reshape(shape[0],shape[1],shape[2])
+        onefile_data_pose_r = onefile_data_pose_r[:,0:shape[1]-1,:]
+        path = "/media/chen/4CBEA7F1BEA7D1AE/Download/hand_dataset/shake_view/"+userid+"/"+capid
+        if not os.path.isdir(path):
+            os.makedirs(path)
+            print("creat path : " + path)
+        for test_read_i in range(shape[0]):
+            figure_joint_skeleton(onefile_data_pose_r[test_read_i,:,:] ,path + "/"+seqid+"/", test_read_i)
+        """

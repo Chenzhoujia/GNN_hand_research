@@ -121,6 +121,49 @@ def figure_joint_skeleton(uvd_pt,path,test_num):
         os.makedirs(path)
         print("creat path : " + path)
     plt.savefig(path+str(test_num).zfill(7)+".png")
+def figure_hand_back(uvd_pt,uvd_pt2,path,test_num):
+    #uvd_pt = np.reshape(uvd_pt, (20, 3))
+    uvd_pt = uvd_pt.reshape(-1, 3)
+    uvd_pt2 = uvd_pt2.reshape(-1, 3)
+    fig = plt.figure(1)
+    fig.clear()
+    ax = plt.subplot(111, projection='3d')
+
+    fig_color = ['c', 'm', 'y', 'g', 'r']
+
+    ax.scatter(uvd_pt[0, 0], uvd_pt[0, 1], uvd_pt[0, 2], s=10, c='b')
+    ax.scatter(uvd_pt[1, 0], uvd_pt[1, 1], uvd_pt[1, 2], s=10, c='b')
+    ax.scatter(uvd_pt[2, 0], uvd_pt[2, 1], uvd_pt[2, 2], s=10, c='b')
+
+    ax.plot([uvd_pt[0, 0], uvd_pt[1, 0]],
+            [uvd_pt[0, 1], uvd_pt[1, 1]],
+            [uvd_pt[0, 2], uvd_pt[1, 2]], color='b', linewidth=1)
+    ax.plot([uvd_pt[1, 0], uvd_pt[2, 0]],
+            [uvd_pt[1, 1], uvd_pt[2, 1]],
+            [uvd_pt[1, 2], uvd_pt[2, 2]], color='b', linewidth=1)
+    ax.plot([uvd_pt[2, 0], uvd_pt[0, 0]],
+            [uvd_pt[2, 1], uvd_pt[0, 1]],
+            [uvd_pt[2, 2], uvd_pt[0, 2]], color='b', linewidth=1)
+
+    plt.ylim(-300, 100)
+    plt.xlim(-300, 100)
+    ax.set_zlim(-300, 100)
+
+    ax.scatter(uvd_pt2[0, 0], uvd_pt2[0, 1], uvd_pt2[0, 2], s=10, c='r')
+    ax.scatter(uvd_pt2[1, 0], uvd_pt2[1, 1], uvd_pt2[1, 2], s=10, c='r')
+    ax.scatter(uvd_pt2[2, 0], uvd_pt2[2, 1], uvd_pt2[2, 2], s=10, c='r')
+
+    ax.plot([uvd_pt2[0, 0], uvd_pt2[1, 0]],
+            [uvd_pt2[0, 1], uvd_pt2[1, 1]],
+            [uvd_pt2[0, 2], uvd_pt2[1, 2]], color='r', linewidth=1)
+    ax.plot([uvd_pt2[1, 0], uvd_pt2[2, 0]],
+            [uvd_pt2[1, 1], uvd_pt2[2, 1]],
+            [uvd_pt2[1, 2], uvd_pt2[2, 2]], color='r', linewidth=1)
+    ax.plot([uvd_pt2[2, 0], uvd_pt2[0, 0]],
+            [uvd_pt2[2, 1], uvd_pt2[0, 1]],
+            [uvd_pt2[2, 2], uvd_pt2[0, 2]], color='r', linewidth=1)
+
+    plt.savefig(path+str(test_num).zfill(7)+".png")
 
 def figure_smp_pts(dm, pts1, pts2):
     fig = matplotlib.figure.Figure()

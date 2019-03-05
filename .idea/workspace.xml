@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62103a3b-9959-40bd-b077-3b42f9a5a251" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_generate/read_facebook_data_Trajectory.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/data_generate/TIM-Tremor/touch_data.py" afterPath="$PROJECT_DIR$/data_generate/TIM-Tremor/touch_data.py" />
-      <change beforePath="$PROJECT_DIR$/data_generate/read_facebook_data.py" afterPath="$PROJECT_DIR$/data_generate/read_facebook_data.py" />
+      <change beforePath="$PROJECT_DIR$/data_generate/read_facebook_data_Trajectory.py" afterPath="$PROJECT_DIR$/data_generate/read_facebook_data_Trajectory.py" />
+      <change beforePath="$PROJECT_DIR$/util/visual.py" afterPath="$PROJECT_DIR$/util/visual.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,8 +24,8 @@
       <file leaf-file-name="read_facebook_data_Trajectory.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data_generate/read_facebook_data_Trajectory.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="92" column="93" lean-forward="false" selection-start-line="92" selection-start-column="93" selection-end-line="92" selection-end-column="93" />
+            <state relative-caret-position="-48">
+              <caret line="223" column="33" lean-forward="false" selection-start-line="223" selection-start-column="8" selection-end-line="223" selection-end-column="33" />
               <folding>
                 <element signature="e#22#40#0" expanded="true" />
               </folding>
@@ -34,10 +33,35 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="visual.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/util/visual.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="155" column="20" lean-forward="false" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="20" />
+              <folding>
+                <element signature="e#39#62#0" expanded="true" />
+                <element signature="e#273#420#0" expanded="false" />
+                <element signature="e#456#2623#0" expanded="false" />
+                <element signature="e#7523#7830#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pydevd.py" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19278">
+              <caret line="1071" column="0" lean-forward="false" selection-start-line="1071" selection-start-column="0" selection-end-line="1071" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="transform.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/coordinate_transform/transform.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="606">
+            <state relative-caret-position="14256">
               <caret line="795" column="0" lean-forward="false" selection-start-line="795" selection-start-column="0" selection-end-line="795" selection-end-column="0" />
               <folding>
                 <element signature="e#3274#3307#0" expanded="true" />
@@ -49,7 +73,7 @@
       <file leaf-file-name="touch_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_generate/TIM-Tremor/touch_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="601">
+            <state relative-caret-position="648">
               <caret line="41" column="32" lean-forward="true" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
               <folding />
             </state>
@@ -67,36 +91,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>TeamcityDocTestResult</find>
-      <find>DocTestRunner</find>
-      <find>figure_joint_skeleton</find>
-      <find>rot_ax</find>
-      <find>x</find>
-      <find>*</find>
-      <find>one_file_name</find>
       <find>file_name_detail</find>
       <find>tremor_file_name_all</find>
-      <find>file_name</find>
       <find>i_detail</find>
       <find>i_seqid</find>
       <find>tremor_time</find>
       <find>pose_time</find>
       <find>tremor_x</find>
-      <find>split</find>
       <find>size</find>
       <find>onefile_data</find>
       <find>onefile_data_repeat_ampx</find>
-      <find>pose_num</find>
       <find>step_num</find>
       <find>path_r_txt</find>
       <find>i_userid</find>
       <find>userid</find>
       <find>capid</find>
       <find>seqid</find>
-      <find>i_userid_sel_list</find>
-      <find>i_seqid_sel_list</find>
       <find>i_userid_sel</find>
       <find>i_seqid_sel</find>
+      <find>i_userid_sel_list</find>
+      <find>i_seqid_sel_list</find>
+      <find>file_name</find>
+      <find>spilt</find>
+      <find>split</find>
+      <find>tremor_z</find>
+      <find>file_name_all</find>
+      <find>pose_num</find>
+      <find>reshape</find>
+      <find>mapping_i</find>
+      <find>onefile_data_i</find>
+      <find>onefile_data_repeat_saved</find>
     </findStrings>
     <replaceStrings>
       <replace>base_graph_fun</replace>
@@ -127,10 +151,10 @@
         <option value="$PROJECT_DIR$/data_generate/rotate.py" />
         <option value="$PROJECT_DIR$/data_generate/py_coordinate_transformation-master/transform.py" />
         <option value="$PROJECT_DIR$/util/coordinate_transform/transform.py" />
-        <option value="$PROJECT_DIR$/util/visual.py" />
         <option value="$PROJECT_DIR$/util/orthogonal/Orthogonal_3d.py" />
         <option value="$PROJECT_DIR$/data_generate/TIM-Tremor/touch_data.py" />
         <option value="$PROJECT_DIR$/data_generate/read_facebook_data.py" />
+        <option value="$PROJECT_DIR$/util/visual.py" />
         <option value="$PROJECT_DIR$/data_generate/read_facebook_data_Trajectory.py" />
       </list>
     </option>
@@ -142,8 +166,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="622" />
-    <option name="y" value="100" />
+    <option name="x" value="548" />
+    <option name="y" value="-4" />
     <option name="width" value="808" />
     <option name="height" value="762" />
   </component>
@@ -165,6 +189,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -180,14 +205,12 @@
             <path>
               <item name="GNN_hand_research" type="b2602c69:ProjectViewProjectNode" />
               <item name="GNN_hand_research" type="462c0819:PsiDirectoryNode" />
-              <item name="data_generate" type="462c0819:PsiDirectoryNode" />
-              <item name="TIM-Tremor" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -570,11 +593,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27320674" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4113924" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35126582" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35126582" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -756,23 +779,35 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/data_generate/read_facebook_data_Trajectory.py</url>
-          <line>94</line>
-          <option name="timeStamp" value="159" />
+          <line>255</line>
+          <option name="timeStamp" value="173" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_generate/read_facebook_data_Trajectory.py</url>
+          <line>166</line>
+          <option name="timeStamp" value="177" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_generate/read_facebook_data_Trajectory.py</url>
+          <line>223</line>
+          <option name="timeStamp" value="179" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_generate/read_facebook_data_Trajectory.py</url>
+          <line>211</line>
+          <option name="timeStamp" value="180" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_generate/read_facebook_data_Trajectory.py</url>
+          <line>95</line>
+          <option name="timeStamp" value="183" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="160" />
+      <option name="time" value="184" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/my_demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hand_GNN.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12834">
@@ -1045,30 +1080,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/visual.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="122" column="51" lean-forward="false" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="51" />
-          <folding>
-            <element signature="e#39#62#0" expanded="true" />
-            <element signature="e#273#420#0" expanded="false" />
-            <element signature="e#456#2623#0" expanded="false" />
-            <element signature="e#5751#6058#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="1071" column="0" lean-forward="false" selection-start-line="1071" selection-start-column="0" selection-end-line="1071" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/util/coordinate_transform/transform.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
+        <state relative-caret-position="14256">
           <caret line="795" column="0" lean-forward="false" selection-start-line="795" selection-start-column="0" selection-end-line="795" selection-end-column="0" />
           <folding>
             <element signature="e#3274#3307#0" expanded="true" />
@@ -1076,28 +1090,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/dense/lib/python2.7/site-packages/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data_generate/TIM-Tremor/touch_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
+        <state relative-caret-position="648">
           <caret line="41" column="32" lean-forward="true" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19278">
+          <caret line="1071" column="0" lean-forward="false" selection-start-line="1071" selection-start-column="0" selection-end-line="1071" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data_generate/read_facebook_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+        <state relative-caret-position="248">
+          <caret line="51" column="54" lean-forward="true" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
           <folding>
             <element signature="e#22#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/util/visual.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="155" column="20" lean-forward="false" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="20" />
+          <folding>
+            <element signature="e#39#62#0" expanded="true" />
+            <element signature="e#273#420#0" expanded="false" />
+            <element signature="e#456#2623#0" expanded="false" />
+            <element signature="e#7523#7830#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data_generate/read_facebook_data_Trajectory.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="92" column="93" lean-forward="false" selection-start-line="92" selection-start-column="93" selection-end-line="92" selection-end-column="93" />
+        <state relative-caret-position="-48">
+          <caret line="223" column="33" lean-forward="false" selection-start-line="223" selection-start-column="8" selection-end-line="223" selection-end-column="33" />
           <folding>
             <element signature="e#22#40#0" expanded="true" />
           </folding>
