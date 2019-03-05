@@ -22,13 +22,17 @@ def read_file(filename):
         return pos
 
 
-def get_file_name(file_dir):
+def get_file_name(file_dir,suffix=None):
     file_names = []
     for root, dirs, files in os.walk(file_dir):
         if files==[]:
             continue
         for file in files:
-            file_names.append(root+"/"+file)  # 当前目录路径
+            if suffix==None:
+                file_names.append(root+"/"+file)  # 当前目录路径
+            elif file.endswith("."+suffix):
+                file_names.append(root + "/" + file)  # 当前目录路径
+
     return file_names
         #print('sub_dirs:', dirs)  # 当前路径下所有子目录
         #print('files:', files)  # 当前路径下所有非目录子文件
@@ -86,8 +90,8 @@ def z_Rotation(pose, angel):
     #恢复成ndarray
     return pose_z
 
-file_name_all = get_file_name('/home/chen/Documents/.git/Mocap_SIG18_Data/training_data')
-
+file_name_all = get_file_name('/home/chen/Documents/.git/Mocap_SIG18_Data/training_data',"trc")
+tremor_file_name_all = get_file_name('/media/chen/4CBEA7F1BEA7D1AE/Download/hand_dataset/pakinson/extract_data',"txt")
 i_userid_sel_list = ["T008"]
 i_seqid_sel_list = ["2_Hz_lower","Counting","Finger_tapping","Hands_in_pronation","Months_backward","Playing_piano","Thumbs_up","Top_nose_left","Top_nose_right","Top_top"]
 for i_userid_sel in i_userid_sel_list:
@@ -110,7 +114,7 @@ for i_userid_sel in i_userid_sel_list:
             """
             #获取已有的完整xyz三轴的震荡曲线
 
-            tremor_file_name_all = get_file_name('/media/chen/4CBEA7F1BEA7D1AE/Download/hand_dataset/pakinson/extract_data')
+
             tremor_file_name_all_tsv = []
             for i in tremor_file_name_all:
                 i_detail = i.split('/')

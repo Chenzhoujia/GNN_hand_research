@@ -23,6 +23,9 @@ for one_file_name in file_name_all:
     if not os.path.isdir(saved_path):
         os.makedirs(saved_path)
         print("creat path : " + saved_path)
+    else:
+        print("pass: " + saved_path)
+        continue
     train = pd.read_csv(one_file_name, sep='\t')
     train = train.values
 
@@ -30,8 +33,11 @@ for one_file_name in file_name_all:
     train = train - train_mean
     sample_num = np.size(train, 0)
     t = np.arange(0, sample_num, 1)
-
-    for clo in [0,1,2,4,5,6]: #: (0) sensor-1 x, (1) sensor-1 y,(2) sensor-1 z, (4) sensor-2 x, (5) sensor-2 y, (6) sensor-2 z
+    #: (0) sensor-1 x, (1) sensor-1 y,(2) sensor-1 z, (4) sensor-2 x, (5) sensor-2 y, (6) sensor-2 z
+    # 手背是sensor-1，手臂是sensor-2
+    # z-axis pointing away from the skin surface, while y-axis pointing towards the fingers.
+    # 数据集中标的左右指的是病人的生理上的左右手，而不是图像中的左右
+    for clo in [0,1,2,4,5,6]:
         plt.clf()
         acc_data = train[:, clo]
         fig = plt.figure()
