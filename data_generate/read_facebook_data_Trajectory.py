@@ -95,7 +95,6 @@ tremor_file_name_all = get_file_name('/media/chen/4CBEA7F1BEA7D1AE/Download/hand
 
 tremor_file_name_all = np.array(tremor_file_name_all)
 tremor_file_name_all = np.reshape(tremor_file_name_all,(-1,6))
-tremor_file_name_all = [tremor_file_name_all[142]]
 for tremor_file_name_index, tremor_file_name in enumerate(tremor_file_name_all):
     # 验证，分割，读取，幅度变化
     #分割
