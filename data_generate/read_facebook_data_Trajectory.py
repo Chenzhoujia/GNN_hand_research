@@ -100,6 +100,11 @@ for tremor_file_name_index, tremor_file_name in enumerate(tremor_file_name_all):
     #分割
     tremor_file_name_detail = tremor_file_name[0].split('/')
     tremor_capid = tremor_file_name_detail[8]
+    # 手工筛选
+    if tremor_capid not in ["T040_Right","T055_Left"]:#"T020_Left","T008_Right","T001_Left"
+        print("pass "+tremor_file_name[0] )
+        continue
+
     tremor_seqid = tremor_file_name_detail[9]
     #验证
     exame_id = 0
@@ -118,7 +123,7 @@ for tremor_file_name_index, tremor_file_name in enumerate(tremor_file_name_all):
     tremor_y = np.loadtxt(tremor_file_name[1]) #y-axis pointing towards the fingers.
     tremor_z = np.loadtxt(tremor_file_name[2]) #z-axis pointing away from the skin surface
     #幅度变化
-    modify_amp = 5000
+    modify_amp = 10000
     tremor_x /= modify_amp
     tremor_y /= modify_amp
     tremor_z /= modify_amp
@@ -166,7 +171,8 @@ for tremor_file_name_index, tremor_file_name in enumerate(tremor_file_name_all):
         tremor_time = np.size(tremor_x)/1000.0
         pose_time = np.size(onefile_data,0)/120.0
         if pose_time>tremor_time:
-            raise RuntimeError("pose_time is: "+str(pose_time)+"tremor_time is:"+str(tremor_time))
+            print("pose_time is: "+str(pose_time)+"tremor_time is:"+str(tremor_time))
+            continue
         repeat_time = tremor_time/pose_time
         repeat_time = int(math.floor(repeat_time))
 
@@ -234,15 +240,17 @@ for tremor_file_name_index, tremor_file_name in enumerate(tremor_file_name_all):
         onefile_data_repeat[:, 5] += onefile_xyz_axis_repeat[:, 2]
         onefile_data_repeat[:, 8] += onefile_xyz_axis_repeat[:, 2]
 
-        #保存txt文件
-        path_r_txt = "/media/chen/4CBEA7F1BEA7D1AE/Download/hand_dataset/pakinson/shake_tra/"\
-                     +tremor_capid+ "/" + tremor_seqid+"/"+pose_userid +"/"+pose_capid
-        if not os.path.isdir(path_r_txt):
-            os.makedirs(path_r_txt)
-            print("creat path : " + path_r_txt)
-        np.savetxt(path_r_txt + "/" + pose_seqid + "_shake.txt", onefile_data_repeat)  # 缺省按照'%.18e'格式保存数据，以空格分隔
+        onefile_data_repeat = np.concatenate((onefile_data_repeat, onefile_data_repeat_saved), axis=1)
 
-        np.savetxt(path_r_txt + "/" + pose_seqid + "_gt.txt", onefile_data_repeat_saved)  # 缺省按照'%.18e'格式保存数据，以空格分隔
+        #保存txt文件
+        path_r_txt_shake = "/media/chen/4CBEA7F1BEA7D1AE/Download/hand_dataset/pakinson/shake_tra/"\
+                     +tremor_capid+ "/" + tremor_seqid+"/"+pose_userid +"/"+pose_capid + "/"
+
+        if not os.path.isdir(path_r_txt_shake):
+            os.makedirs(path_r_txt_shake)
+            print("creat path : " + path_r_txt_shake)
+
+        np.savetxt(path_r_txt_shake + pose_seqid + ".txt", onefile_data_repeat)  # 缺省按照'%.18e'格式保存数据，以空格分隔
 
         """
         #通过轨迹效果调整坐标轴和缩放尺度
