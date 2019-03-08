@@ -101,7 +101,7 @@ for tremor_file_name_index, tremor_file_name in enumerate(tremor_file_name_all):
     tremor_file_name_detail = tremor_file_name[0].split('/')
     tremor_capid = tremor_file_name_detail[8]
     # 手工筛选
-    if tremor_capid not in ["T040_Right","T055_Left"]:#"T020_Left","T008_Right","T001_Left"
+    if tremor_capid not in ["T002_Left"]:#"T040_Right","T055_Left","T020_Left","T008_Right","T001_Left"
         print("pass "+tremor_file_name[0] )
         continue
 
