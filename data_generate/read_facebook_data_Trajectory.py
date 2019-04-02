@@ -1,6 +1,7 @@
 # -- coding: utf-8 --
 import numpy as np
 import os, random, struct, math
+import matplotlib.pyplot as plt
 from util.visual import figure_joint_skeleton, figure_hand_back
 #filename = '/home/chen/Documents/.git/Mocap_SIG18_Data/training_data/User1/capture1/sequence.1_training_dense_left.trc'
 def read_file(filename):
@@ -95,13 +96,14 @@ tremor_file_name_all = get_file_name('/media/chen/4CBEA7F1BEA7D1AE/Download/hand
 
 tremor_file_name_all = np.array(tremor_file_name_all)
 tremor_file_name_all = np.reshape(tremor_file_name_all,(-1,6))
+draw_index = 0 # draw index
 for tremor_file_name_index, tremor_file_name in enumerate(tremor_file_name_all):
     # 验证，分割，读取，幅度变化
     #分割
     tremor_file_name_detail = tremor_file_name[0].split('/')
     tremor_capid = tremor_file_name_detail[8]
     # 手工筛选
-    if tremor_capid not in ["T002_Left"]:#"T040_Right","T055_Left","T020_Left","T008_Right","T001_Left"
+    if tremor_capid not in ["T034_Left","T033_Left"]:#"T002_Left","T040_Right","T055_Left","T020_Left","T008_Right","T001_Left"
         print("pass "+tremor_file_name[0] )
         continue
 
@@ -228,6 +230,7 @@ for tremor_file_name_index, tremor_file_name in enumerate(tremor_file_name_all):
         #交配 onefile_data_repeat(x,9)  tremor_x(x),根据可视化效果看看是否需要调整坐标系匹配
         onefile_data_repeat_saved = np.array(onefile_data_repeat)
 
+
         onefile_data_repeat[:, 0] += onefile_xyz_axis_repeat[:, 0]
         onefile_data_repeat[:, 3] += onefile_xyz_axis_repeat[:, 0]
         onefile_data_repeat[:, 6] += onefile_xyz_axis_repeat[:, 0]
@@ -241,6 +244,19 @@ for tremor_file_name_index, tremor_file_name in enumerate(tremor_file_name_all):
         onefile_data_repeat[:, 8] += onefile_xyz_axis_repeat[:, 2]
 
         onefile_data_repeat = np.concatenate((onefile_data_repeat, onefile_data_repeat_saved), axis=1)
+
+        # 绘制3D图
+        fig = plt.figure(1)
+        fig.clear()
+        ax1 = plt.subplot(131, projection = '3d')
+        ax2 = plt.subplot(132, projection = '3d')
+        ax3 = plt.subplot(133, projection = '3d')
+        ax1.plot(onefile_data_repeat_saved[:, 0],onefile_data_repeat_saved[:, 1],onefile_data_repeat_saved[:, 2],linewidth = 0.3)
+        ax2.plot(onefile_xyz_axis_repeat[:, 0],onefile_xyz_axis_repeat[:, 1],onefile_xyz_axis_repeat[:, 2],linewidth = 0.3)
+        ax3.plot(onefile_data_repeat[:, 0], onefile_data_repeat[:, 1], onefile_data_repeat[:, 2],linewidth = 0.3)
+        plt.savefig("/home/chen/Documents/GNN_hand_research/data_generate/image/" + str(draw_index).zfill(7) + ".png")
+        draw_index = draw_index+1
+        # 分析统计幅度和频率
 
         #保存txt文件
         path_r_txt_shake = "/media/chen/4CBEA7F1BEA7D1AE/Download/hand_dataset/pakinson/shake_tra/"\
